@@ -107,93 +107,75 @@ const Header = () => {
 
       {/* Mobile menu */}
       {isMobileOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white">
-          <nav className="px-4 py-4 space-y-3 text-gray-700 font-medium">
-            <Link
-              to="/"
-              onClick={closeMobile}
-              className="block hover:text-[#2F36C6]"
-            >
-              Home
+  <>
+    {/* Backdrop (below header) */}
+    <div
+      className="fixed top-20 left-0 w-full h-[calc(100vh-80px)] bg-black/40 z-40 md:hidden"
+      onClick={closeMobile}
+    />
+
+    {/* Menu Panel */}
+    <div
+      className={`fixed top-20 left-0 w-full bg-white shadow-lg z-50 md:hidden transform transition-transform duration-300 ${
+        isMobileOpen ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
+      <nav className="px-6 py-6 space-y-4 text-gray-700 font-medium">
+        <Link to="/" onClick={closeMobile} className="block hover:text-[#2F36C6]">
+          Home
+        </Link>
+
+        <details className="group">
+          <summary className="flex justify-between items-center cursor-pointer list-none hover:text-[#2F36C6]">
+            <span>Services</span>
+            <span className="text-xs text-gray-500 group-open:rotate-180 transition-transform">
+              ▼
+            </span>
+          </summary>
+
+          <div className="mt-2 pl-3 space-y-2 text-sm">
+            <Link to="/services/seo" onClick={closeMobile} className="block hover:text-[#2F36C6]">
+              SEO Optimization
             </Link>
-            <details className="group">
-              <summary className="flex justify-between items-center cursor-pointer list-none hover:text-[#2F36C6]">
-                <span>Services</span>
-                <span className="text-xs text-gray-500 group-open:rotate-180 transition-transform">
-                  ▼
-                </span>
-              </summary>
-              <div className="mt-2 pl-3 space-y-2 text-sm">
-                <Link
-                  to="/services/seo"
-                  onClick={closeMobile}
-                  className="block hover:text-[#2F36C6]"
-                >
-                  SEO Optimization
-                </Link>
-                <Link
-                  to="/services/ppc"
-                  onClick={closeMobile}
-                  className="block hover:text-[#2F36C6]"
-                >
-                  PPC Advertising
-                </Link>
-                <Link
-                  to="/services/web"
-                  onClick={closeMobile}
-                  className="block hover:text-[#2F36C6]"
-                >
-                  Web Design
-                </Link>
-                <Link
-                  to="/services/social-media-marketing"
-                  onClick={closeMobile}
-                  className="block hover:text-[#2F36C6]"
-                >
-                  Social Media Marketing
-                </Link>
-                <Link
-                  to="/services/content-marketing"
-                  onClick={closeMobile}
-                  className="block hover:text-[#2F36C6]"
-                >
-                  Content Marketing
-                </Link>
-                <Link
-                  to="/services/brand"
-                  onClick={closeMobile}
-                  className="block hover:text-[#2F36C6]"
-                >
-                  Brand Strategy
-                </Link>
-              </div>
-            </details>
-            <Link
-              to="/contact"
-              onClick={closeMobile}
-              className="block hover:text-[#2F36C6]"
-            >
-              Contact
+            <Link to="/services/ppc" onClick={closeMobile} className="block hover:text-[#2F36C6]">
+              PPC Advertising
             </Link>
-            <Link
-              to="/aboutUs"
-              onClick={closeMobile}
-              className="block hover:text-[#2F36C6]"
-            >
-              About Us
+            <Link to="/services/web" onClick={closeMobile} className="block hover:text-[#2F36C6]">
+              Web Design
             </Link>
-            <button
-              className="mt-2 w-full bg-[#2F36C6] text-white px-5 py-2 rounded-xl hover:opacity-90 transition"
-              onClick={() => {
-                navigate("/contact");
-                closeMobile();
-              }}
-            >
-              Get a Quote
-            </button>
-          </nav>
-        </div>
-      )}
+            <Link to="/services/social-media-marketing" onClick={closeMobile} className="block hover:text-[#2F36C6]">
+              Social Media Marketing
+            </Link>
+            <Link to="/services/content-marketing" onClick={closeMobile} className="block hover:text-[#2F36C6]">
+              Content Marketing
+            </Link>
+            <Link to="/services/brand" onClick={closeMobile} className="block hover:text-[#2F36C6]">
+              Brand Strategy
+            </Link>
+          </div>
+        </details>
+
+        <Link to="/contact" onClick={closeMobile} className="block hover:text-[#2F36C6]">
+          Contact
+        </Link>
+
+        <Link to="/aboutUs" onClick={closeMobile} className="block hover:text-[#2F36C6]">
+          About Us
+        </Link>
+
+        <button
+          className="mt-2 w-full bg-[#2F36C6] text-white px-5 py-2 rounded-xl hover:opacity-90 transition"
+          onClick={() => {
+            navigate("/contact");
+            closeMobile();
+          }}
+        >
+          Get a Quote
+        </button>
+      </nav>
+    </div>
+  </>
+)}
     </header>
   );
 };

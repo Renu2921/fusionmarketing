@@ -10,11 +10,14 @@ import SocialMedia from "./pages/services/SocialMedia"
 import Content from "./pages/services/Content"
 import WebDesign from "./pages/services/WebDesign"
 import Brand from "./pages/services/Brand"
+import ScrollToTop from "./pages/ScrollToTop"
+import NotFound from "./pages/NotFound"
 
 function App() {
 
   return (
     <>
+    <ScrollToTop/>
     <Routes>
       <Route path="/" element={<Body/>}>
       <Route index element={<Home/>}/>
@@ -28,6 +31,7 @@ function App() {
       <Route path="/services/web" element={<WebDesign/>}/>
       <Route path="/services/brand" element={<Brand/>}/>
       </Route>
+      <Route path="*" element={<NotFound/>}/>
     </Routes>
     </>
   )

@@ -33,9 +33,9 @@ const Home = () => {
               onClick={()=>navigate("/contact")}>
                 Get Free Consultation
               </button>
-              <button className="border border-fusion text-fusion px-6 py-3 rounded-xl font-medium">
+              {/* <button className="border border-fusion text-fusion px-6 py-3 rounded-xl font-medium">
                 Our Services
-              </button>
+              </button> */}
             </div>
           </div>
           <div>
