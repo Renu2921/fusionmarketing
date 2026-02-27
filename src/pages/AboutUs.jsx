@@ -6,21 +6,21 @@ const AboutUs = () => {
     <section className="w-full bg-blue-50">
 
       {/* INTRO STORY */}
-      <div className="flex max-w-7xl mx-auto py-28">
-        <div className=" flex flex-col justify-center items-center max-w-[50%] mx-auto px-10">
-          <h1 className="text-5xl font-bold text-gray-900 max-w-3xl">
+      <div className="max-w-7xl mx-auto py-16 md:py-28 px-6 md:px-10 grid md:grid-cols-2 gap-10 items-center">
+        <div className="flex flex-col justify-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
             We Build Digital Growth Systems <br />
             Not Just Campaigns
           </h1>
 
-          <p className="mt-8 text-lg text-gray-600 max-w-3xl">
+          <p className="mt-6 md:mt-8 text-base md:text-lg text-gray-600">
             Fusion Marketing was created with one belief: sustainable growth
             happens when strategy, execution, and data work together. We help
             brands move beyond guesswork and build marketing systems that scale.
           </p>
         </div>
-         <div className="w-[50%]">
-            <img src={aboutUs} className="w-full h-full"/>
+         <div className="w-full">
+            <img src={aboutUs} className="w-full h-full max-w-xl mx-auto" alt="About Fusion Marketing" />
          </div>
       </div>
 

@@ -47,7 +47,7 @@ const HowWeWork = () => {
         </div>
 
         {/* Hexagon Process */}
-        <div className="mt-20 flex justify-between items-center relative">
+        <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:flex lg:justify-between lg:items-center lg:relative">
 
           {steps.map((step, index) => (
             <div key={index} className="relative flex flex-col items-center">
@@ -67,7 +67,7 @@ const HowWeWork = () => {
 
               {/* Connector */}
               {index !== steps.length - 1 && (
-                <div className="absolute top-1/2 left-full w-24 border-t-2 border-dotted border-gray-300"></div>
+                <div className="hidden lg:block absolute top-1/2 left-full w-24 border-t-2 border-dotted border-gray-300"></div>
               )}
             </div>
           ))}
