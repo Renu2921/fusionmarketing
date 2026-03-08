@@ -35,7 +35,7 @@ const SocialMedia = () => {
           {/* RIGHT IFRAME */}
           <div className="flex justify-center">
             
-             <img src={socialMedia}/>
+             <img src={socialMedia}/>x
            
           </div>
 
