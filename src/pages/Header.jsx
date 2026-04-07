@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logoImage from "../assets/logo1.png";
+import logo from "../assets/fusionMarketing.png"
 
 const Header = () => {
   const navigate = useNavigate();
@@ -20,13 +20,10 @@ const Header = () => {
           }}
         >
           <img
-            src={logoImage}
+            src={logo}
             alt="Fusion Marketing logo"
-            className="h-12 w-12 sm:h-16 sm:w-16"
+            className="h-20 w-20 sm:h-20 sm:w-20"
           />
-          <Link to="/" className="text-lg sm:text-xl font-bold text-fusion">
-            Fusion Marketing
-          </Link>
         </div>
 
         {/* Desktop nav */}

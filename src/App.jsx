@@ -11,7 +11,7 @@ import Content from "./pages/services/Content"
 import WebDesign from "./pages/services/WebDesign"
 import Brand from "./pages/services/Brand"
 import ScrollToTop from "./pages/ScrollToTop"
-import NotFound from "./pages/NotFound"
+import NotFound from "./pages/NotFound";
 
 function App() {
 

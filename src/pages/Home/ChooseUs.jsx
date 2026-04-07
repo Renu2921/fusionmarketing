@@ -17,23 +17,22 @@ const ChooseUs = () => {
         >
 
           <h2 className="text-[3rem] font-bold text-gray-900">
-            Why Businesses Choose{" "}
-            <span className="text-[#2F36C6]">Fusion Marketing</span>
+           Why Smart Businesses Choose {" "}
+           <span className="text-[#2F36C6]">Fusion Marketing</span>
           </h2>
 
           <p className="mt-4 text-gray-600 text-lg">
-            We focus on real growth, measurable results, and long-term success —
-            not just clicks and impressions.
+            We focus on what actually matters — growing your business, not just your numbers.
           </p>
 
           <ul className="mt-8 space-y-4 text-gray-700">
 
             {[
-              "ROI-focused digital strategies, not vanity metrics",
-              "Dedicated account management with regular performance reports",
-              "Customized solutions aligned with your business goals",
-              "Expertise in Meta Ads, Google Ads, SEO & Web Development",
-              "Scalable services for startups and established brands",
+              "Strategies built for real business growth, not just traffic",
+              "Clear communication and full transparency at every step",
+              "Campaigns designed to generate leads and revenue",
+              "Data-backed decisions, not guesswork",
+              "Flexible solutions that grow with your business",
             ].map((item, index) => (
 
               <motion.li

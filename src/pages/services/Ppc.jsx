@@ -60,15 +60,15 @@ const Ppc = () => {
             {[
               {
                 title: "Profit-First Campaigns",
-                desc: "Every campaign is built backwards from revenue targets.",
+                desc: "We don’t run ads for clicks — we build campaigns focused on revenue, ensuring every rupee spent contributes to real business growth.",
               },
               {
                 title: "Full Funnel Visibility",
-                desc: "From click to conversion to sale — nothing is hidden.",
+                desc: "From first click to final conversion, we track everything so you always know what’s working and where your money is going.",
               },
               {
                 title: "Controlled Scaling",
-                desc: "We scale only when numbers prove it’s safe to do so.",
+                desc: "We scale campaigns only when the data proves profitability — ensuring sustainable and risk-free growth.",
               },
             ].map((item, i) => (
               <div key={i} className="bg-[#F5F7FF] p-8 rounded-2xl">
