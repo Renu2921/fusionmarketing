@@ -285,25 +285,42 @@ const Home = () => {
             className="mt-12 grid md:grid-cols-3 gap-8"
           >
             {services.map((item, index) => (
-              <motion.div
-                key={index} variants={cardVariants}
-                whileHover={{ y: -8, scale: 1.03 }}
-                transition={{ type: "spring", stiffness: 200 }}
-                className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition cursor-pointer group"
-                onClick={() => navigate(item.path)}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="bg-blue-50 rounded-xl p-3 group-hover:bg-[#2F36C6] transition">
-                    <img src={item.image} className="w-10 h-10" alt={item.title} />
-                  </div>
-                  <h3 className="text-xl font-semibold text-[#2F36C6]">{item.title}</h3>
-                </div>
-                <p className="mt-3 text-gray-600">{item.desc}</p>
-                <button className="mt-4 text-[#2F36C6] font-medium hover:underline" onClick={(e) => { e.stopPropagation(); navigate(item.path); }}>
-                  Learn More →
-                </button>
-              </motion.div>
-            ))}
+  <motion.div
+    key={index}
+    variants={cardVariants}
+    whileHover={{ y: -8, scale: 1.03 }}
+    transition={{ type: "spring", stiffness: 200 }}
+    className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition cursor-pointer group hover:bg-[#2F36C6]"
+    onClick={() => navigate(item.path)}
+  >
+    <div className="flex items-center gap-3">
+      <div className="bg-blue-50 rounded-xl p-3  transition">
+        <img src={item.image} className="w-10 h-10" alt={item.title} />
+      </div>
+
+      {/* 👇 TEXT COLOR CHANGE */}
+      <h3 className="text-xl font-semibold text-[#2F36C6] group-hover:text-white">
+        {item.title}
+      </h3>
+    </div>
+
+    {/* 👇 DESCRIPTION TEXT */}
+    <p className="mt-3 text-gray-600 group-hover:text-white/90">
+      {item.desc}
+    </p>
+
+    {/* 👇 BUTTON TEXT */}
+    <button
+      className="mt-4 text-[#2F36C6] font-medium hover:underline group-hover:text-white"
+      onClick={(e) => {
+        e.stopPropagation();
+        navigate(item.path);
+      }}
+    >
+      Learn More →
+    </button>
+  </motion.div>
+))}
           </motion.div>
         </div>
       </section>
@@ -339,28 +356,41 @@ const Home = () => {
       </section>
 
       {/* ── INDUSTRIES ───────────────────────────────────────────────── */}
-      <section className="bg-[#2F36C6]">
-        <div className="max-w-7xl mx-auto px-6 py-20">
-          <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center mb-12">
-            <span className="text-blue-300 font-semibold text-sm uppercase tracking-widest">Sectors We Serve</span>
-            <h2 className="mt-2 text-3xl md:text-4xl font-bold text-white">We Grow Businesses Across Every Industry</h2>
-          </motion.div>
+     <section className="relative bg-[#2F36C6]">
+  {/* Top Wave */}
+  <div className="absolute top-0 left-0 w-full overflow-hidden leading-none rotate-180">
+    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-16 md:h-20">
+      <path d="M0,40 C180,80 360,0 540,40 C720,80 900,0 1080,40 C1260,80 1380,20 1440,40 L1440,80 L0,80 Z" fill="white" />
+    </svg>
+  </div>
 
-          <motion.div variants={staggerContainer} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-            {industries.map((ind, i) => (
-              <motion.div
-                key={i} variants={cardVariants}
-                whileHover={{ scale: 1.06, backgroundColor: "rgba(255,255,255,0.18)" }}
-                className="bg-white/10 border border-white/20 rounded-2xl p-6 flex flex-col items-center gap-3 text-white cursor-default transition"
-              >
-                <span className="text-4xl">{ind.icon}</span>
-                <span className="font-semibold text-sm text-center">{ind.label}</span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+  <div className="max-w-7xl mx-auto px-6 py-24">
+    <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center mb-12">
+      <span className="text-blue-300 font-semibold text-sm uppercase tracking-widest">Sectors We Serve</span>
+      <h2 className="mt-2 text-3xl md:text-4xl font-bold text-white">We Grow Businesses Across Every Industry</h2>
+    </motion.div>
 
+    <motion.div variants={staggerContainer} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid grid-cols-2 sm:grid-cols-4 gap-5">
+      {industries.map((ind, i) => (
+        <motion.div
+          key={i} variants={cardVariants}
+          whileHover={{ scale: 1.06, backgroundColor: "rgba(255,255,255,0.18)" }}
+          className="bg-white/10 border border-white/20 rounded-2xl p-6 flex flex-col items-center gap-3 text-white cursor-default transition"
+        >
+          <span className="text-4xl">{ind.icon}</span>
+          <span className="font-semibold text-sm text-center">{ind.label}</span>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+
+  {/* Bottom Wave */}
+  <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-16 md:h-20">
+      <path d="M0,40 C180,80 360,0 540,40 C720,80 900,0 1080,40 C1260,80 1380,20 1440,40 L1440,80 L0,80 Z" fill="white" />
+    </svg>
+  </div>
+</section>
       {/* ── TESTIMONIALS ─────────────────────────────────────────────── */}
       <section className="bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 py-20">

@@ -299,7 +299,7 @@ const WebDesign = () => {
             </p>
             <div className="mt-16 max-w-4xl mx-auto space-y-8">
               {process.map((item, i) => (
-                <div key={i} className="flex gap-6 items-start">
+                <div key={i} className="flex gap-6 items-center">
                   <div className="w-10 h-10 shrink-0 rounded-full bg-[#2F36C6] text-white flex items-center justify-center font-bold">
                     {i + 1}
                   </div>

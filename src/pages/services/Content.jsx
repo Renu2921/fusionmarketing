@@ -116,11 +116,22 @@ const Content = () => {
                 desc: "Shareable content puts your brand in front of new audiences at no extra cost. Every piece is a potential touchpoint with a future customer.",
               },
             ].map((item, i) => (
-              <div key={i} className="bg-[#F5F7FF] p-8 rounded-2xl hover:shadow-md transition">
-                <div className="text-3xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-semibold text-[#2F36C6]">{item.title}</h3>
-                <p className="mt-4 text-gray-600 leading-relaxed">{item.desc}</p>
-              </div>
+              <div
+  key={i}
+  className="bg-[#F5F7FF] p-8 rounded-2xl transition hover:bg-[#2F36C6] hover:shadow-md group"
+>
+  <div className="text-3xl mb-4 group-hover:text-white">
+    {item.icon}
+  </div>
+
+  <h3 className="text-xl font-semibold text-[#2F36C6] group-hover:text-white">
+    {item.title}
+  </h3>
+
+  <p className="mt-4 text-gray-600 leading-relaxed group-hover:text-white/90">
+    {item.desc}
+  </p>
+</div>
             ))}
           </div>
         </div>
@@ -171,18 +182,41 @@ const Content = () => {
                 items: ["Content Audits", "Keyword Strategy", "Content Calendars", "Brand Voice Guides", "Competitor Analysis"],
               },
             ].map((cat, i) => (
-              <div key={i} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition">
-                <div className="text-3xl mb-3">{cat.icon}</div>
-                <h4 className="text-lg font-bold text-gray-900 mb-4">{cat.category}</h4>
-                <ul className="space-y-2">
-                  {cat.items.map((item, j) => (
-                    <li key={j} className="flex items-center gap-2 text-gray-600 text-sm">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#2F36C6] inline-block" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <div
+  key={i}
+  className="bg-white rounded-2xl p-8 shadow-sm transition-all duration-300 
+             hover:shadow-xl hover:-translate-y-2 hover:bg-[#F5F7FF] 
+             border border-transparent hover:border-[#2F36C6]/30 
+             group relative overflow-hidden"
+>
+  {/* 🔵 Left Accent Line */}
+  <div className="absolute left-0 top-0 h-full w-1 bg-[#2F36C6] scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top"></div>
+
+  {/* ICON */}
+  <div className="text-3xl mb-3 transition-transform duration-300 group-hover:scale-110">
+    {cat.icon}
+  </div>
+
+  {/* TITLE */}
+  <h4 className="text-lg font-bold text-gray-900 mb-4 group-hover:text-[#2F36C6] transition">
+    {cat.category}
+  </h4>
+
+  {/* LIST */}
+  <ul className="space-y-2">
+    {cat.items.map((item, j) => (
+      <li
+        key={j}
+        className="flex items-center gap-2 text-gray-600 text-sm 
+                   group-hover:text-gray-800 transition"
+      >
+        <span className="w-1.5 h-1.5 rounded-full bg-[#2F36C6] 
+                         group-hover:scale-125 transition-transform inline-block" />
+        {item}
+      </li>
+    ))}
+  </ul>
+</div>
             ))}
           </div>
         </div>
@@ -233,7 +267,7 @@ const Content = () => {
                 tag: "Monthly",
               },
             ].map((item, i) => (
-              <div key={i} className="flex gap-6 items-start bg-[#F5F7FF] rounded-2xl p-6">
+              <div key={i} className="flex gap-6 items-center bg-[#F5F7FF] rounded-2xl p-6">
                 <div className="w-10 h-10 min-w-[2.5rem] rounded-full bg-[#2F36C6] text-white flex items-center justify-center font-bold text-sm">
                   {i + 1}
                 </div>
@@ -429,7 +463,7 @@ const Content = () => {
       </div>
 
       {/* PRICING TIERS */}
-      <div className="bg-[#F5F7FF] py-24">
+      {/* <div className="bg-[#F5F7FF] py-24">
         <div className="max-w-7xl mx-auto px-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-4xl font-bold text-gray-900">
@@ -496,7 +530,7 @@ const Content = () => {
           </div>
           <p className="text-center text-gray-500 text-sm mt-8">All plans include onboarding, brand voice guidelines, and a dedicated account manager. Custom enterprise plans available.</p>
         </div>
-      </div>
+      </div> */}
 
       {/* TOOLS WE USE */}
       <div className="py-24">

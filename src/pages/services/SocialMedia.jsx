@@ -429,6 +429,53 @@ const SocialMedia = () => {
         </div>
       </div>
 
+      <div className="bg-[#F5F7FF] py-24">
+        <div className="max-w-7xl mx-auto px-10">
+          <div className="text-center mb-16">
+            <p className="text-[#2F36C6] font-semibold uppercase tracking-widest text-sm">Where We Operate</p>
+            <h2 className="font-display text-4xl font-bold text-gray-900 mt-3">
+              Platforms We <span className="gradient-text">Master</span>
+            </h2>
+          </div>
+
+        
+          <div className="flex flex-wrap justify-center gap-2 mb-10">
+            {platforms.map((p, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveTab(i)}
+                className={`tab-pill px-5 py-2.5 rounded-full text-sm font-semibold border ${activeTab === i ? "bg-[#2F36C6] text-white border-[#2F36C6] shadow-lg shadow-[#2F36C6]/30" : "bg-white text-gray-600 border-gray-200 hover:border-[#2F36C6]"}`}
+              >
+                {p.icon} {p.name}
+              </button>
+            ))}
+          </div>
+
+         
+          <div className="max-w-3xl mx-auto bg-white rounded-3xl p-10 shadow-lg text-center">
+            <div className="text-6xl mb-4">{platforms[activeTab].icon}</div>
+            <h3 className="font-display text-3xl font-bold" style={{ color: platforms[activeTab].color }}>
+              {platforms[activeTab].name}
+            </h3>
+            <p className="mt-4 text-gray-600 text-lg leading-relaxed max-w-xl mx-auto">
+              {platforms[activeTab].desc}
+            </p>
+            <div className="mt-6 inline-flex items-center gap-2 bg-gray-50 border border-gray-200 text-gray-600 px-5 py-2 rounded-full text-sm">
+              <span className="font-semibold">Best for:</span> {platforms[activeTab].best}
+            </div>
+            <div className="mt-8">
+              <button
+                onClick={() => navigate("/contact")}
+                className="bg-[#2F36C6] text-white px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition"
+              >
+                Grow on {platforms[activeTab].name} →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       {/* ── WHY SOCIAL MATTERS ────────────────────────────────────────────── */}
       <div className="bg-[#F5F7FF] py-24">
         <div className="max-w-7xl mx-auto px-10 text-center">
@@ -459,6 +506,8 @@ const SocialMedia = () => {
           </div>
         </div>
       </div>
+
+      
 
       {/* ── SERVICES ──────────────────────────────────────────────────────── */}
       <div className="py-24 bg-white">
@@ -493,7 +542,7 @@ const SocialMedia = () => {
       </div>
 
       {/* ── PLATFORMS ─────────────────────────────────────────────────────── */}
-      <div className="bg-[#F5F7FF] py-24">
+      {/* <div className="bg-[#F5F7FF] py-24">
         <div className="max-w-7xl mx-auto px-10">
           <div className="text-center mb-16">
             <p className="text-[#2F36C6] font-semibold uppercase tracking-widest text-sm">Where We Operate</p>
@@ -502,7 +551,7 @@ const SocialMedia = () => {
             </h2>
           </div>
 
-          {/* Tab selector */}
+        
           <div className="flex flex-wrap justify-center gap-2 mb-10">
             {platforms.map((p, i) => (
               <button
@@ -515,7 +564,7 @@ const SocialMedia = () => {
             ))}
           </div>
 
-          {/* Active platform card */}
+         
           <div className="max-w-3xl mx-auto bg-white rounded-3xl p-10 shadow-lg text-center">
             <div className="text-6xl mb-4">{platforms[activeTab].icon}</div>
             <h3 className="font-display text-3xl font-bold" style={{ color: platforms[activeTab].color }}>
@@ -537,7 +586,7 @@ const SocialMedia = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* ── PROCESS ───────────────────────────────────────────────────────── */}
       <div className="py-24 bg-white">
@@ -640,7 +689,7 @@ const SocialMedia = () => {
       </div>
 
       {/* ── PRICING ───────────────────────────────────────────────────────── */}
-      <div className="bg-[#F5F7FF] py-24">
+      {/* <div className="bg-[#F5F7FF] py-24">
         <div className="max-w-7xl mx-auto px-10">
           <div className="text-center mb-16">
             <p className="text-[#2F36C6] font-semibold uppercase tracking-widest text-sm">Transparent Pricing</p>
@@ -689,7 +738,7 @@ const SocialMedia = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* ── FAQ ───────────────────────────────────────────────────────────── */}
       <div className="py-24 bg-white">

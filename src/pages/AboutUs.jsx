@@ -579,7 +579,7 @@ const AboutUs = () => {
             If you're looking for a strategic partner who cares about results as much as you do,
             we'd love to show you exactly how we'd grow your business.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          {/* <div className="flex flex-wrap justify-center gap-4">
             <motion.a
               href="/contact"
               whileHover={{ y: -3, boxShadow: "0 16px 40px rgba(0,0,0,.25)" }}
@@ -599,7 +599,7 @@ const AboutUs = () => {
             >
               Explore Services
             </motion.a>
-          </div>
+          </div> */}
         </Section>
       </div>
 

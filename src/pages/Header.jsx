@@ -35,6 +35,12 @@ const Header = () => {
             <span className="cursor-pointer hover:text-[#2F36C6]">Services</span>
 
             <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-lg w-56">
+               <Link
+                to="/services/social-media-marketing"
+                className="text-sm block px-4 py-2 hover:bg-gray-100"
+              >
+                Social Media Marketing
+              </Link>
               <Link
                 to="/services/seo"
                 className="text-sm block px-4 py-2 hover:bg-gray-100"
@@ -53,12 +59,7 @@ const Header = () => {
               >
                 Web Design
               </Link>
-              <Link
-                to="/services/social-media-marketing"
-                className="text-sm block px-4 py-2 hover:bg-gray-100"
-              >
-                Social Media Marketing
-              </Link>
+             
               <Link
                 to="/services/content-marketing"
                 className="text-sm block px-4 py-2 hover:bg-gray-100"

@@ -394,11 +394,11 @@ const Seo = () => {
               onMouseLeave={e => e.target.style.transform = "translateY(0)"}>
               Talk to an SEO Expert →
             </button>
-            <button style={s.btnSecondary} onClick={() => navigate("/case-studies")}
+            {/* <button style={s.btnSecondary} onClick={() => navigate("/case-studies")}
               onMouseEnter={e => e.target.style.background = "rgba(255,255,255,0.2)"}
               onMouseLeave={e => e.target.style.background = "rgba(255,255,255,0.1)"}>
               View Case Studies
-            </button>
+            </button> */}
           </div>
 
           {/* mini trust row */}
@@ -434,7 +434,7 @@ const Seo = () => {
 
       {/* ══ HOW SEO HELPS ══ */}
       <section style={{ ...s.section, background: "#f9fafb" }}>
-        <div style={s.sectionInner}>
+        <div style={s.sectionInner} >
           <div style={{ textAlign: "center", marginBottom: "60px" }}>
             <span style={s.sectionTag}>Why SEO</span>
             <h2 style={s.sectionTitle}>
@@ -454,17 +454,65 @@ const Seo = () => {
               // { emoji: "🔍", title: "Competitive Intelligence", desc: "We decode what your top competitors are doing in search and systematically outflank their strategy." },
               // { emoji: "⚡", title: "Faster Conversions", desc: "Users who find you via organic search already have purchase intent. Your sales cycle shortens significantly." },
             ].map((item) => (
-              <div key={item.title} style={{
-                background: "#fff", borderRadius: "20px", padding: "32px",
-                border: "1px solid #e5e7eb", transition: "all 0.3s",
-              }}
-                onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 12px 40px rgba(47,54,198,0.12)"; e.currentTarget.style.transform = "translateY(-4px)"; }}
-                onMouseLeave={e => { e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "translateY(0)"; }}
-              >
-                <div style={{ fontSize: "36px", marginBottom: "16px" }}>{item.emoji}</div>
-                <h3 style={{ fontWeight: 700, fontSize: "18px", color: "#2F36C6", marginBottom: "10px" }}>{item.title}</h3>
-                <p style={{ color: "#6b7280", lineHeight: 1.7, fontSize: "15px" }}>{item.desc}</p>
-              </div>
+              <div
+  key={item.title}
+  style={{
+    background: "#fff",
+    borderRadius: "20px",
+    padding: "32px",
+    border: "1px solid #e5e7eb",
+    transition: "all 0.3s",
+  }}
+  onMouseEnter={(e) => {
+    const card = e.currentTarget;
+
+    card.style.background = "#2F36C6";
+    card.style.color = "#fff";
+    card.style.boxShadow = "0 12px 40px rgba(47,54,198,0.2)";
+    card.style.transform = "translateY(-4px)";
+
+    // change inner text colors
+    card.querySelector("h3").style.color = "#fff";
+    card.querySelector("p").style.color = "#fff";
+  }}
+  onMouseLeave={(e) => {
+    const card = e.currentTarget;
+
+    card.style.background = "#fff";
+    card.style.color = "#000";
+    card.style.boxShadow = "none";
+    card.style.transform = "translateY(0)";
+
+    // reset text colors
+    card.querySelector("h3").style.color = "#2F36C6";
+    card.querySelector("p").style.color = "#6b7280";
+  }}
+>
+  <div style={{ fontSize: "36px", marginBottom: "16px" }}>
+    {item.emoji}
+  </div>
+
+  <h3
+    style={{
+      fontWeight: 700,
+      fontSize: "18px",
+      color: "#2F36C6",
+      marginBottom: "10px",
+    }}
+  >
+    {item.title}
+  </h3>
+
+  <p
+    style={{
+      color: "#6b7280",
+      lineHeight: 1.7,
+      fontSize: "15px",
+    }}
+  >
+    {item.desc}
+  </p>
+</div>
             ))}
           </div>
         </div>
@@ -485,21 +533,88 @@ const Seo = () => {
           </div>
           <div style={s.servicesGrid}>
             {services.map((svc) => (
-              <div key={svc.title} style={s.serviceCard}
-                onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 16px 48px rgba(47,54,198,0.12)"; e.currentTarget.style.transform = "translateY(-6px)"; e.currentTarget.style.borderColor = "#c7d2fe"; }}
-                onMouseLeave={e => { e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.borderColor = "#e5e7eb"; }}
-              >
-                <div style={s.serviceIcon}>
-                  <Icon d={svc.icon} color="#fff" size={24} />
-                </div>
-                <h3 style={{ fontWeight: 700, fontSize: "19px", marginBottom: "12px" }}>{svc.title}</h3>
-                <p style={{ color: "#6b7280", lineHeight: 1.7, fontSize: "14px", marginBottom: "20px" }}>{svc.desc}</p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
-                  {svc.tags.map(t => (
-                    <span key={t} style={{ background: "#eef2ff", color: "#4338ca", borderRadius: "100px", padding: "4px 12px", fontSize: "12px", fontWeight: 600 }}>{t}</span>
-                  ))}
-                </div>
-              </div>
+              <div
+  key={svc.title}
+  style={s.serviceCard}
+  onMouseEnter={(e) => {
+    const card = e.currentTarget;
+
+    // card styles
+    card.style.background = "#2F36C6";
+    card.style.color = "#fff";
+    card.style.boxShadow = "0 16px 48px rgba(47,54,198,0.2)";
+    card.style.transform = "translateY(-6px)";
+    card.style.borderColor = "#2F36C6";
+
+    // text
+    card.querySelector("h3").style.color = "#fff";
+    card.querySelector("p").style.color = "#fff";
+
+    // tags
+    card.querySelectorAll(".tag").forEach((el) => {
+      el.style.background = "#fff";
+      el.style.color = "#2F36C6";
+    });
+  }}
+  onMouseLeave={(e) => {
+    const card = e.currentTarget;
+
+    // reset card
+    card.style.background = "#fff";
+    card.style.color = "#000";
+    card.style.boxShadow = "none";
+    card.style.transform = "translateY(0)";
+    card.style.borderColor = "#e5e7eb";
+
+    // reset text
+    card.querySelector("h3").style.color = "#000";
+    card.querySelector("p").style.color = "#6b7280";
+
+    // reset tags
+    card.querySelectorAll(".tag").forEach((el) => {
+      el.style.background = "#eef2ff";
+      el.style.color = "#4338ca";
+    });
+  }}
+>
+  <div style={s.serviceIcon}>
+    <Icon d={svc.icon} color="#fff" size={24} />
+  </div>
+
+  <h3 style={{ fontWeight: 700, fontSize: "19px", marginBottom: "12px" }}>
+    {svc.title}
+  </h3>
+
+  <p
+    style={{
+      color: "#6b7280",
+      lineHeight: 1.7,
+      fontSize: "14px",
+      marginBottom: "20px",
+    }}
+  >
+    {svc.desc}
+  </p>
+
+  <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+    {svc.tags.map((t) => (
+      <span
+        key={t}
+        className="tag"
+        style={{
+          background: "#eef2ff",
+          color: "#4338ca",
+          borderRadius: "100px",
+          padding: "4px 12px",
+          fontSize: "12px",
+          fontWeight: 600,
+        }}
+      >
+        {t}
+      </span>
+    ))}
+  </div>
+</div>
             ))}
           </div>
         </div>
@@ -617,14 +732,14 @@ const Seo = () => {
             >
               Get Your Free SEO Roadmap
             </button>
-            <button
+            {/* <button
               style={{ background: "rgba(255,255,255,0.15)", color: "#fff", padding: "18px 32px", borderRadius: "14px", fontWeight: 600, fontSize: "17px", border: "2px solid rgba(255,255,255,0.3)", cursor: "pointer", transition: "all 0.2s", fontFamily: "inherit" }}
               onClick={() => navigate("/case-studies")}
               onMouseEnter={e => e.target.style.background = "rgba(255,255,255,0.25)"}
               onMouseLeave={e => e.target.style.background = "rgba(255,255,255,0.15)"}
             >
               See Our Work
-            </button>
+            </button> */}
           </div>
           <p style={{ marginTop: "24px", fontSize: "13px", color: "rgba(255,255,255,0.5)" }}>
             No commitment required · Response within 24 hours · 100% confidential
